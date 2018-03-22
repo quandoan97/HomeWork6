@@ -6,7 +6,7 @@
 
 class Dialogs {
   public:
-
+  
     // A message is like cout, simply displaying information to the user
     static void message(std::string msg, std::string title = "Info");
 

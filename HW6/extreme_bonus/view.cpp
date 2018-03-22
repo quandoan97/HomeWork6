@@ -5,6 +5,7 @@
 #include "dialogs.h"
 #include <iostream>
 #include <string>
+#include "main_window.h"
 
 int View::select_from_menu() {
   std::string menu = R"(
@@ -25,7 +26,7 @@ Library Management System<sup><small>TM</small></sup></span>
 <span color='#007f00'><b>(9) Help</b></span>
 (0) Exit
 )";
-
+  Main_window *m = new Main_window();
   std::string result = Dialogs::input(menu, "Main Menu");
   try {
     return (result == "CANCEL") ? 0 : std::stoi(result);

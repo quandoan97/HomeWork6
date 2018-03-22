@@ -1,5 +1,6 @@
 #include "dialogs.h"
 
+
 // A message is like cout, simply displaying information to the user
 void Dialogs::message(std::string msg, std::string title) {
     Gtk::MessageDialog *dialog = new Gtk::MessageDialog(title);

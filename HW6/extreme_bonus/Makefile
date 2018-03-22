@@ -8,10 +8,12 @@ rebuild: div all
 debug: CXXFLAGS += -g
 debug: rebuild
 
-main: main.o controller.o view.o library.o publication.o patron.o dialogs.o
-	$(CXX) $(CXXFLAGS) -o lms main.o controller.o view.o library.o publication.o patron.o dialogs.o $(GTKFLAGS)
+main: main.o controller.o view.o library.o publication.o patron.o dialogs.o main_window.o
+	$(CXX) $(CXXFLAGS) -o lms main.o controller.o view.o library.o publication.o patron.o dialogs.o main_window.o $(GTKFLAGS)
 main.o: main.cpp *.h
 	$(CXX) $(CXXFLAGS) -c main.cpp $(GTKFLAGS)
+main_window.o: main_window.cpp
+	$(CXX) $(CXXFLAGS) -c main_window.cpp $(GTKFLAGS)
 controller.o: controller.cpp *.h
 	$(CXX) $(CXXFLAGS) -c controller.cpp $(GTKFLAGS)
 view.o: view.cpp dialogs.o *.h
